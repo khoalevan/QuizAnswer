@@ -1,5 +1,8 @@
 public class LinkedListType {
+    /*Save address when delete all elements*/
     private static LinkedListType first;
+
+    /*Links to the next node*/
     private LinkedListType next;
     private int data;
 
@@ -12,6 +15,9 @@ public class LinkedListType {
         this.next = null;
     }
 
+    /*
+    * Append element to tail of the list
+    */
     public void appendElement(int data) {
         LinkedListType element = new LinkedListType(data);
         LinkedListType temp = first;
@@ -21,8 +27,12 @@ public class LinkedListType {
         temp.next = element;
     }
 
+    /*
+    * Delete tail element
+    */
     public void deleteTailElement() {
         if (first.next == null) return;
+
         LinkedListType temp = first;
         LinkedListType previous = first;
 
@@ -34,6 +44,9 @@ public class LinkedListType {
         previous.next = null;
     }
 
+    /*
+    * Remove all elements which are greater than a number
+    */
     public void removeElementGreaterThan(int data) {
         if (first.next == null) return;
 
@@ -51,7 +64,10 @@ public class LinkedListType {
         } while (temp != null);
     }
 
-    public void printContent() {
+    /*
+    * Print elements in the list
+    */
+    public void printListContent() {
         LinkedListType temp = first.next;
         String s = "";
         while (temp != null) {
